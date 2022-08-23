@@ -1,0 +1,69 @@
+// Body
+$bg-body-default: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+//  // Colors
+//  $color-blue: #3490dc;
+//  $color-indigo: #6574cd;
+//  $color-purple: #9561e2;
+//  $color-pink: #f66d9b;
+//  $color-red: #e3342f;
+//  $color-orange: #f6993f;
+//  $color-yellow: #ffed4a;
+//  $color-green: #38c172;
+//  $color-teal: #4dc0b5;
+//  $color-cyan: #6cb2eb;
+//  $color-gray-100: #f8f9fa;
+//  $color-gray-200: #e9ecef;
+//  $color-gray-300: #dee2e6;
+//  $color-gray-400: #ced4da;
+//  $color-gray-500: #adb5bd;
+//  $color-gray-600: #6c757d;
+//  $color-gray-700: #495057;
+//  $color-gray-800: #343a40;
+//  $color-gray-900: #212529;
+//  
+//  //Global Variables
+//  $color-primary: #121c58;
+//  $color-secondary: #00acff;
+//  $color-light: #f8f9fa; 
+//  $color-dark: #1b262c;
+//  $color-success: #28a745;
+//  $color-danger: #dc3545;
+//  $color-warning: #ffc107;
+//  $color-info: #17a2b8;
+
+$colors: (
+    "blue": #3490dc,
+    "indigo": #6574cd,
+    "purple": #9561e2,
+    "pink": #f66d9b,
+    "red": #e3342f,
+    "orange": #f6993f,
+    "yellow": #ffed4a,
+    "green": #38c172,
+    "teal": #4dc0b5,
+    "cyan": #6cb2eb,
+    "gray_100": #f8f9fa,
+    "gray_200": #e9ecef,
+    "gray_300": #dee2e6,
+    "gray_400": #ced4da,
+    "gray_500": #adb5bd,
+    "gray_600": #6c757d,
+    "gray_700": #495057,
+    "gray_800": #343a40,
+    "gray_900": #212529,
+    //Global Color Palette
+    "primary": #121c58,
+    "secondary": #00acff,
+    "light": #f8f9fa, 
+    "dark": #1b262c,
+    "success": #28a745,
+    "danger": #dc3545,
+    "warning": #ffc107,
+    "info": #17a2b8
+);

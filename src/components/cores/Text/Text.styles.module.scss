@@ -1,0 +1,26 @@
+@use '/styles/variables' as *;
+@use '/styles/color' as *;
+
+
+//Colors
+.color{
+
+    @include text-color;
+
+    //Não pode utilizar de funções SASS, visto que elas são executadas em compilação, não dinamicamente, e as variáveis CSS são dinâmicas, tendo um valor indefinido até a finalização da compilação, podendo varias o seu valor
+    //&:hover{color: lighten($color: var(--color), $amount: 30);}
+}
+
+.text{
+    
+}
+
+//Styles
+.bold{font-weight: bold;}
+.italic{font-style: italic;}
+.text_size_xs{font-size: x-small;}
+.text_size_sm{font-size: small;}
+.text_size_md{font-size: 1rem;}
+.text_size_lg{font-size: large;}
+.text_size_xl{font-size: larger;}
+.text_size_xxl{font-size: x-large;}

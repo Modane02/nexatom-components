@@ -1,0 +1,15 @@
+@use 'variables' as *;
+@use 'sass:map';
+
+@mixin border-color{
+    //Set Color With Dinamic Variable
+    --borderColor: #{map.get($colors, "dark")};
+    color: var(--borderColor);
+
+    //Variations
+    @each $color-name, $color-hex in $colors {
+        &.border_#{$color-name}{--borderColor: #{$color-hex};}
+    }
+    //Exclusive Variations
+    &.border_transparent{--borderColor: transparent;}
+}

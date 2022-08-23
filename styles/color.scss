@@ -1,0 +1,34 @@
+@use 'variables' as *;
+@use 'sass:map';
+
+
+//@mixin text-color{
+//    //Set Color With Dinamic Variable
+//    --textColor: #{$color-dark};
+//    color: var(--textColor);
+//
+//    //Variations
+//    &.color_primary{--textColor: #{$color-primary};}
+//    &.color_secondary{--textColor: #{$color-secondary}}
+//    &.color_dark{--textColor: #{$color-dark};}
+//    &.color_light{--textColor: #{$color-light};}
+//    &.color_success{--textColor: #{$color-success};}
+//    &.color_danger{--textColor: #{$color-danger};}
+//    &.color_warning{--textColor: #{$color-warning};}
+//    &.color_info{--textColor: #{$color-info};}
+//    &.color_none{--textColor: transparent;}
+//}
+
+
+@mixin text-color{
+    //Set Color With Dinamic Variable
+    --textColor: #{map.get($colors, "dark")};
+    color: var(--textColor);
+
+    //Variations
+    @each $color-name, $color-hex in $colors {
+        &.color_#{$color-name}{--textColor: #{$color-hex};}
+    }
+    //Exclusive Variations
+    &.color_none{--textColor: transparent;}
+}

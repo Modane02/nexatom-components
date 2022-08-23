@@ -1,0 +1,58 @@
+@use 'variables' as *;
+@use 'sass:map';
+
+@mixin background-color{
+    //Set Background Color With Dinamic Variable
+    --backgroundColor: transparent;
+    background-color: var(--backgroundColor);
+
+    //Variations
+    @each $color-name, $color-hex in $colors {
+        &.bg_#{$color-name}{--backgroundColor: #{$color-hex};}
+    }
+    //Exclusive Variations
+    &.bg_none{--backgroundColor: transparent;}
+}
+
+@mixin background-color-light($light){
+    //Set Background Color With Dinamic Variable
+    --backgroundColor: transparent;
+    --backgroundColor_Light: var(--backgroundColor);
+    background-color: var(--backgroundColor);
+
+    //Variations
+    @each $color-name, $color-hex in $colors {
+        &.bg_#{$color-name}{--backgroundColor: #{$color-hex};} --backgroundColor_Light: #{lighten($color: $color-hex, $amount: $light)};
+    }
+    //Exclusive Variations
+    &.bg_none{--backgroundColor: transparent; --backgroundColor_Light: #{lighten($color: transparent, $amount: $light)};}
+}
+
+@mixin background-color-dark($dark){
+    //Set Background Color With Dinamic Variable
+    --backgroundColor: transparent;
+    --backgroundColor_Dark: var(--backgroundColor);
+    background-color: var(--backgroundColor);
+
+    //Variations
+    @each $color-name, $color-hex in $colors {
+        &.bg_#{$color-name}{--backgroundColor: #{$color-hex};} --backgroundColor_Dark: #{darken($color: $color-hex, $amount: $dark)}; --backgroundColor_Light: #{lighten($color: $color-hex, $amount: $light)};
+    }
+    //Exclusive Variations
+    &.bg_none{--backgroundColor: transparent; --backgroundColor_Dark: #{darken($color: transparent, $amount: $dark)};}
+}
+
+@mixin background-color-dark-light($dark, $light){
+    //Set Background Color With Dinamic Variable
+    --backgroundColor: transparent;
+    --backgroundColor_Dark: var(--backgroundColor);
+    --backgroundColor_Light: var(--backgroundColor);
+    background-color: var(--backgroundColor);
+
+    //Variations
+    @each $color-name, $color-hex in $colors {
+        &.bg_#{$color-name}{--backgroundColor: #{$color-hex}; --backgroundColor_Dark: #{darken($color: $color-hex, $amount: $dark)}; --backgroundColor_Light: #{lighten($color: $color-hex, $amount: $light)};};
+    }
+    //Exclusive Variations
+    &.bg_none{--backgroundColor: transparent; --backgroundColor_Dark: #{darken($color: transparent, $amount: $dark)}; --backgroundColor_Light: #{lighten($color: transparent, $amount: $light)};}
+}

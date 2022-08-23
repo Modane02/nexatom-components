@@ -1,0 +1,33 @@
+@import 'variables';
+
+/* IMPORTS ORIGINAIS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //font-family: "Source Sans Pro";
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  //font-family: $font-family-sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: $bg-body-default;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* PAGE CERTER FOR COMPONENTS CREATION */
+
+.app{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,18 @@
+@use '/styles/variables' as *;
+@use '/styles/color' as *;
+@use 'sass:map';
+
+
+
+//Colors
+.color{
+    @include text-color;
+
+    //Não pode utilizar de funções SASS, visto que elas são executadas em compilação, não dinamicamente, e as variáveis CSS são dinâmicas, tendo um valor indefinido até a finalização da compilação, podendo varias o seu valor
+    //&:hover{color: lighten($color: var(--color), $amount: 30);}
+}
+
+//Styles
+.bold{font-weight: bold;}
+.italic{font-style: italic;}
+.muted{color: lighten($color: map.get($colors, "dark"), $amount: 20);}
