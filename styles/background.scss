@@ -36,7 +36,7 @@
 
     //Variations
     @each $color-name, $color-hex in $colors {
-        &.bg_#{$color-name}{--backgroundColor: #{$color-hex};} --backgroundColor_Dark: #{darken($color: $color-hex, $amount: $dark)}; --backgroundColor_Light: #{lighten($color: $color-hex, $amount: $light)};
+        &.bg_#{$color-name}{--backgroundColor: #{$color-hex}; --backgroundColor_Dark: #{darken($color: $color-hex, $amount: $dark)};};
     }
     //Exclusive Variations
     &.bg_none{--backgroundColor: transparent; --backgroundColor_Dark: #{darken($color: transparent, $amount: $dark)};}

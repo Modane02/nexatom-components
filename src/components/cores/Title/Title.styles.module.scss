@@ -1,0 +1,30 @@
+@use '/styles/variables' as *;
+@use '/styles/color' as *;
+
+
+//Colors
+.color{
+    @include text-color;
+}
+
+.heading{
+    font-weight: 500;
+}
+
+//Styles
+.bold{font-weight: bold;}
+.italic{font-style: italic;}
+
+.title_size_h1{font-size: $heading-size-h1;}
+.title_size_h2{font-size: $heading-size-h2;}
+.title_size_h3{font-size: $heading-size-h3;}
+.title_size_h4{font-size: $heading-size-h4;}
+.title_size_h5{font-size: $heading-size-h5;}
+.title_size_h6{font-size: $heading-size-h6;}
+
+.title_size_d1{font-size: $display-size-1;}
+.title_size_d2{font-size: $display-size-2;}
+.title_size_d3{font-size: $display-size-3;}
+.title_size_d4{font-size: $display-size-4;}
+.title_size_d5{font-size: $display-size-5;}
+.title_size_d6{font-size: $display-size-6;}

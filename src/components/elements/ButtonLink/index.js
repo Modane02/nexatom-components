@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import styles from './ButtonLink.styles.module.scss';
 import Text from '../../cores/Text';
 

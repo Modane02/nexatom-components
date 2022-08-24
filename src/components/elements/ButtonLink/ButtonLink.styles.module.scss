@@ -5,7 +5,11 @@
 .btn {
     padding: 5px 10px;
     margin: 5px;
-    //cursor: pointer;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     overflow: hidden;
 
@@ -28,11 +32,6 @@
 
 //Background Color
 .bg{
-    cursor: pointer;
-    user-select: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     @include background-color-dark-light(5, 1);
     transition: .15s background-color ease;
     &:hover{background-color: var(--backgroundColor_Dark)};
