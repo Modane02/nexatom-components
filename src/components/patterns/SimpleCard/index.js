@@ -3,7 +3,7 @@ import React from 'react';
 import Text from '../../cores/Text';
 import styles from './SimpleCard.styles.module.scss';
 
-function SimpleCard({children, border, round, dashed, classes}) {
+function SimpleCard({children, border, dashed, classes, image, alt}) {
 
     //#region classPicker
     var classes = `${styles["simple_card"]} `;
@@ -18,8 +18,10 @@ function SimpleCard({children, border, round, dashed, classes}) {
         <div 
             className={classes}
         >
-            <Image src="https://segurolight.com.br/img/icons/seg-car-colisao.jpg" alt="alt" layout="responsive" width="40px" height="40px" objectFit="contain"/>
-            <Text>{children}</Text>
+            <div style={{width: "33%", height: "auto"}}>
+                <Image src={image} alt={alt} layout="responsive" width={100} height={100} objectFit="contain"/>
+            </div>
+            <Text style={{maxWidth: "66%"}}>{children}</Text>
         </div>
      );
 }
