@@ -18,10 +18,12 @@ function SimpleCard({children, border, dashed, classes, image, alt}) {
         <div 
             className={classes}
         >
-            <div style={{width: "33%", height: "auto"}}>
-                <Image src={image} alt={alt} layout="responsive" width={100} height={100} objectFit="contain"/>
+            <div style={{width: "20%", height: "auto", minWidth: "60px"}}>
+                <Image src={image} alt={alt} layout="responsive" width={100} height={100}  objectFit="fill"/>
             </div>
-            <Text style={{maxWidth: "66%"}}>{children}</Text>
+            <div>
+                <Text color="dark" size="md" bold>{children}</Text>
+            </div>
         </div>
      );
 }

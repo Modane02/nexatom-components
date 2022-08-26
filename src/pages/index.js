@@ -15,6 +15,9 @@ export default function Home() {
       <SimpleCard image="https://segurolight.com.br/img/pet/mais-pet-logo-png.png">
         As Melhores Seguradoras Em Um Só Local
       </SimpleCard>
+      <SimpleCard image="https://segurolight.com.br/img/pet/mais-pet-logo-png.png">
+        As Melhores Seguradoras Em Um Só Local
+      </SimpleCard>
     </div>
   )
 }

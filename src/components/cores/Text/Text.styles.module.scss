@@ -38,3 +38,27 @@
 .text_size_d4{font-size: $display-size-4;}
 .text_size_d5{font-size: $display-size-5;}
 .text_size_d6{font-size: $display-size-6;}
+
+@media (max-width: 1200px) {
+    $offset: 0.9vw;
+    .text_size_xxl{font-size: calc($text-size-xxl * $offset);}
+    .text_size_xl{font-size: calc($text-size-xl * $offset);}
+    .text_size_lg{font-size: calc($text-size-lg * $offset);}
+    .text_size_md{font-size: calc($text-size-md * $offset);}
+    .text_size_sm{font-size: calc($text-size-sm * $offset);}
+    .text_size_xs{font-size: calc($text-size-xs * $offset);}
+
+    .text_size_h1{font-size: calc($heading-size-h1 * $offset);}
+    .text_size_h2{font-size: calc($heading-size-h2 * $offset);}
+    .text_size_h3{font-size: calc($heading-size-h3 * $offset);}
+    .text_size_h4{font-size: calc($heading-size-h4 * $offset);}
+    .text_size_h5{font-size: calc($heading-size-h5 * $offset);}
+    .text_size_h6{font-size: calc($heading-size-h6 * $offset);}
+
+    .text_size_d1{font-size: calc($display-size-1 * $offset);}
+    .text_size_d2{font-size: calc($display-size-2 * $offset);}
+    .text_size_d3{font-size: calc($display-size-3 * $offset);}
+    .text_size_d4{font-size: calc($display-size-4 * $offset);}
+    .text_size_d5{font-size: calc($display-size-5 * $offset);}
+    .text_size_d6{font-size: calc($display-size-6 * $offset);}
+}
