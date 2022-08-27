@@ -12,10 +12,10 @@ function opa(){
 export default function Home() {
   return (
     <div className="app">
-      <SimpleCard image="https://segurolight.com.br/img/pet/mais-pet-logo-png.png">
+      <SimpleCard image="/mais-pet-logo-png.png">
         As Melhores Seguradoras Em Um Só Local
       </SimpleCard>
-      <SimpleCard image="https://segurolight.com.br/img/pet/mais-pet-logo-png.png">
+      <SimpleCard image="/mais-pet-logo-png.png">
         As Melhores Seguradoras Em Um Só Local
       </SimpleCard>
     </div>
