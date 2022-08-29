@@ -18,7 +18,7 @@ function SimpleCard({children, border, dashed, classes, image, alt}) {
         <div 
             className={classes}
         >
-            <div style={{width: "25%", height: "auto", minWidth: "55px"}}>
+            <div style={{width: "25%", height: "auto", minWidth: "55px", maxWidth: "110px",}}>
                 <Image src={image} alt={alt} layout="responsive" width={100} height={100}  objectFit="fill"/>
             </div>
             <div>

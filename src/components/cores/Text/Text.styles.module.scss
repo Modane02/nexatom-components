@@ -18,47 +18,46 @@
 //Styles
 .bold{font-weight: bold;}
 .italic{font-style: italic;}
-.text_size_xxl{font-size: $text-size-xxl;}
-.text_size_xl{font-size: $text-size-xl;}
-.text_size_lg{font-size: $text-size-lg;}
-.text_size_md{font-size: $text-size-md;}
-.text_size_sm{font-size: $text-size-sm;}
-.text_size_xs{font-size: $text-size-xs;}
+//.text_size_xxl{font-size: $text-size-xxl;}
+//.text_size_xl{font-size: $text-size-xl;}
+//.text_size_lg{font-size: $text-size-lg;}
+//.text_size_md{font-size: $text-size-md;}
+//.text_size_sm{font-size: $text-size-sm;}
+//.text_size_xs{font-size: $text-size-xs;}
 
-.text_size_h1{font-size: $heading-size-h1;}
-.text_size_h2{font-size: $heading-size-h2;}
-.text_size_h3{font-size: $heading-size-h3;}
-.text_size_h4{font-size: $heading-size-h4;}
-.text_size_h5{font-size: $heading-size-h5;}
-.text_size_h6{font-size: $heading-size-h6;}
+//.text_size_h1{font-size: $heading-size-h1;}
+//.text_size_h2{font-size: $heading-size-h2;}
+//.text_size_h3{font-size: $heading-size-h3;}
+//.text_size_h4{font-size: $heading-size-h4;}
+//.text_size_h5{font-size: $heading-size-h5;}
+//.text_size_h6{font-size: $heading-size-h6;}
 
-.text_size_d1{font-size: $display-size-1;}
-.text_size_d2{font-size: $display-size-2;}
-.text_size_d3{font-size: $display-size-3;}
-.text_size_d4{font-size: $display-size-4;}
-.text_size_d5{font-size: $display-size-5;}
-.text_size_d6{font-size: $display-size-6;}
+//.text_size_d1{font-size: $display-size-1;}
+//.text_size_d2{font-size: $display-size-2;}
+//.text_size_d3{font-size: $display-size-3;}
+//.text_size_d4{font-size: $display-size-4;}
+//.text_size_d5{font-size: $display-size-5;}
+//.text_size_d6{font-size: $display-size-6;}
 
-@media (max-width: 1200px) {
-    $offset: 0.9vw;
-    .text_size_xxl{font-size: calc(#{$text-size-xxl} * #{$offset});}
-    .text_size_xl{font-size: calc(#{$text-size-xl} * #{$offset});}
-    .text_size_lg{font-size: calc(#{$text-size-lg} * #{$offset});}
-    .text_size_md{font-size: calc(#{$text-size-md} * #{$offset});}
-    .text_size_sm{font-size: calc(#{$text-size-sm} * #{$offset});}
-    .text_size_xs{font-size: calc(#{$text-size-xs} * #{$offset});}
+$min-text-size: 0.25rem;
+.text_size_xxl{font-size:clamp(calc(#{$text-size-xxl} - #{$min-text-size}), 3vw, #{$text-size-xxl});}
+.text_size_xl{font-size: clamp(calc(#{$text-size-xl} - #{$min-text-size}), 3vw, #{$text-size-xl});}
+.text_size_lg{font-size: clamp(calc(#{$text-size-lg} - #{$min-text-size}), 3vw, #{$text-size-lg});}
+//.text_size_md{font-size: clamp(calc(#{$text-size-md} - 0.125rem), calc((#{$text-size-md} - 0.125rem) + (#{$text-size-md} - (#{$text-size-md} - 0.125rem)) * ((100vw - 320px) / (1000px - 320px))), #{$text-size-md});}
+.text_size_md{font-size: clamp(calc(#{$text-size-md} - #{$min-text-size}), 3vw, #{$text-size-md});}
+.text_size_sm{font-size: clamp(calc(#{$text-size-sm} - #{$min-text-size}), 3vw, #{$text-size-sm});}
+.text_size_xs{font-size: clamp(calc(#{$text-size-xs} - #{$min-text-size}), 3vw, #{$text-size-xs});}
 
-    .text_size_h1{font-size: calc(#{$heading-size-h1} * #{$offset});}
-    .text_size_h2{font-size: calc(#{$heading-size-h2} * #{$offset});}
-    .text_size_h3{font-size: calc(#{$heading-size-h3} * #{$offset});}
-    .text_size_h4{font-size: calc(#{$heading-size-h4} * #{$offset});}
-    .text_size_h5{font-size: calc(#{$heading-size-h5} * #{$offset});}
-    .text_size_h6{font-size: calc(#{$heading-size-h6} * #{$offset});}
+.text_size_h1{font-size: clamp(calc(#{$heading-size-h1} - #{$min-text-size}), 3vw, #{$heading-size-h1});}
+.text_size_h2{font-size: clamp(calc(#{$heading-size-h2} - #{$min-text-size}), 3vw, #{$heading-size-h2});}
+.text_size_h3{font-size: clamp(calc(#{$heading-size-h3} - #{$min-text-size}), 3vw, #{$heading-size-h3});}
+.text_size_h4{font-size: clamp(calc(#{$heading-size-h4} - #{$min-text-size}), 3vw, #{$heading-size-h4});}
+.text_size_h5{font-size: clamp(calc(#{$heading-size-h5} - #{$min-text-size}), 3vw, #{$heading-size-h5});}
+.text_size_h6{font-size: clamp(calc(#{$heading-size-h6} - #{$min-text-size}), 3vw, #{$heading-size-h6});}
 
-    .text_size_d1{font-size: calc(#{$display-size-1} * #{$offset});}
-    .text_size_d2{font-size: calc(#{$display-size-2} * #{$offset});}
-    .text_size_d3{font-size: calc(#{$display-size-3} * #{$offset});}
-    .text_size_d4{font-size: calc(#{$display-size-4} * #{$offset});}
-    .text_size_d5{font-size: calc(#{$display-size-5} * #{$offset});}
-    .text_size_d6{font-size: calc(#{$display-size-6} * #{$offset});}
-}
+.text_size_d1{font-size: clamp(calc(#{$display-size-1} - #{$min-text-size}), 3vw, #{$display-size-1});}
+.text_size_d2{font-size: clamp(calc(#{$display-size-2} - #{$min-text-size}), 3vw, #{$display-size-2});}
+.text_size_d3{font-size: clamp(calc(#{$display-size-3} - #{$min-text-size}), 3vw, #{$display-size-3});}
+.text_size_d4{font-size: clamp(calc(#{$display-size-4} - #{$min-text-size}), 3vw, #{$display-size-4});}
+.text_size_d5{font-size: clamp(calc(#{$display-size-5} - #{$min-text-size}), 3vw, #{$display-size-5});}
+.text_size_d6{font-size: clamp(calc(#{$display-size-6} - #{$min-text-size}), 3vw, #{$display-size-6});}
