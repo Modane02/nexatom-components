@@ -5,8 +5,21 @@ import styles from './LogoNavBar.styles.module.scss';
 
 
 export default function LogoNavBar({logoSrc, logoAlt, backgroundColor, textColor, whatsapp, telefone}) {
+
+    //#region classPicker
+    var classes = `${styles.nav} `;
+    styles["bg_" + backgroundColor] ? classes += `${styles["bg"]} ${styles["bg_" + backgroundColor]} ` : [];
+    classes = classes.trim();
+    //#endregion
+
     return ( 
-        <nav className={styles.nav}>
+        <nav id="NavBar" className={classes}>
+            
+            <button onClick={()=>{//Implementação gambiarra de um button pra criar o efeito affix
+                const nav = document.getElementById("NavBar");
+                !nav.classList.contains(styles.affix) ? nav.classList.add(styles.affix) : nav.classList.remove(styles.affix);
+            }}>On</button>
+
             <Logo src={logoSrc} alt={logoAlt} href="/" objectPosition="left center" height="100%" width="150px"/>
             <div id="nav" className={styles.nav_field}>
                 <ButtonLink 

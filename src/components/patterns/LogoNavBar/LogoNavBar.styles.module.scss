@@ -9,7 +9,6 @@
     max-height: 80px;
     width: 100%;
     padding: 5px 5%;
-    background-color: blueviolet;
 }
 
 .nav_field{
@@ -17,4 +16,12 @@
     display: flex;
     justify-content: flex-end;
     align-items: stretch;
+}
+
+.bg{
+    background-color: transparent;
+    transition: .15s background-color ease;
+    &.affix{
+        @include background-color;
+    }
 }
