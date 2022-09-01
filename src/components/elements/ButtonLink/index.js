@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ButtonLink.styles.module.scss';
 import Text from '../../cores/Text';
 
-export default function ButtonLink({ type, href, onclick, children, color, background, border, round, dashed, fontsize, padding, margin, height, width }) {
+export default function ButtonLink({ type, href, onclick, children, color, background, border, round, dashed, fontsize, padding, margin, height, width, ...rest}) {
 
     //#region Custom Style Maker
     var customStyle = {};
@@ -10,7 +10,6 @@ export default function ButtonLink({ type, href, onclick, children, color, backg
     if (margin) customStyle["margin"] = margin;
     if (height) customStyle["height"] = height;
     if (width) customStyle["width"] = width;
-    console.log(customStyle);
     //#endregion
 
     //#region classPicker
@@ -59,6 +58,7 @@ export default function ButtonLink({ type, href, onclick, children, color, backg
             href={href}
             onClick={handleClick} //se não funcionar, criar versão do button
             type={type}
+            {...rest}
             role="button"
         >
             <Text color={color} size={fontsize}>{children}</Text>
