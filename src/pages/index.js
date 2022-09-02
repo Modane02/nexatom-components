@@ -11,6 +11,9 @@ export default function Home() {
   return (
     <div className="app">
       <LogoNavBar backgroundColor="red" logoSrc="/mais-pet-logo-png.png" whatsapp="18996080815" telefone="1832734074" textColor="light"/>
+      <ButtonLink background="success" color="light" href="/" border="success" round="rounded">Sucesso!</ButtonLink>
+      <SimpleCard image="/mais-pet-logo-png.png">Texto <Marker italic bold color="blue">Marcado</Marker></SimpleCard>
+      <ButtonLink background="transparent" color="success" href="/" border="success" round="rounded">Sucesso!</ButtonLink>
     </div>
   )
 }
