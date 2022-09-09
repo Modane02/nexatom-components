@@ -31,3 +31,7 @@ a {
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 760px) {
+  .app{flex-direction: column;}
+}

@@ -16,7 +16,7 @@ export default function ButtonLink({ type, href, onclick, children, color, backg
     var classes = `${styles.btn} `;
     styles["bg_" + background] ? classes += `${styles["bg"]} ${styles["bg_" + background]} ` : [];
     border ? classes += `${styles["border"]} ${styles["border_" + border]} ` : [];
-    round ? classes += `${styles["round_" + round]} ` : `${styles["round_rounded"]} `;
+    round ? classes += `${styles["round_" + round]} ` : classes += `${styles["round_rounded"]} `;
     dashed ? classes += `${styles["border_dashed"]} ` : [];
     classes = classes.trim();
     //#endregion

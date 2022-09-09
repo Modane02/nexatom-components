@@ -1,0 +1,6 @@
+@use '/styles/variables' as *;
+
+.cta{
+    & :first-child{text-align: center;}
+    & > *{margin: 5px;}
+}
