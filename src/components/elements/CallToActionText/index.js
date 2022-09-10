@@ -5,12 +5,12 @@ import Text from '../../cores/Text';
 import Title from '../../cores/Title';
 import ButtonLink from '../ButtonLink';
 
-export default function CallToActionText({children, textColor, textSize, title, titleColor, titleSize, buttonText, buttonColor}){
+export default function CallToActionText({children, textColor, textSize, title, titleColor, titleSize, buttonText, buttonColor, href, onclick}){
     return ( 
         <div className={styles.cta}>
             <Title color={titleColor} size={titleSize}>{title}</Title>
             <Text color={textColor} size={textSize}>{children}</Text>
-            <ButtonLink fontsize="h4" color="light" background={buttonColor}><Marker bold>{buttonText}</Marker></ButtonLink>
+            <ButtonLink fontsize="h4" color="light" background={buttonColor} href={href} onclick={onclick}><Marker bold>{buttonText}</Marker></ButtonLink>
         </div>
      );
 }
