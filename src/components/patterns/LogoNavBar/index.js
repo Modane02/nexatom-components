@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import AnimatedHamburgerIcon from '../../cores/AnimatedHamburgerIcon';
 import Logo from '../../cores/Logo';
 import ButtonLink from '../../elements/ButtonLink'; //TOFIX
 import styles from './LogoNavBar.styles.module.scss';
@@ -16,8 +17,16 @@ export default function LogoNavBar({logoSrc, logoAlt, backgroundColor, textColor
     //Seta o estado de affix da nav
     const [isAffix, setIsAffix] = useState(false);
 
+    //Seta constantes de referência DOM
+    const navBar = useRef(null);
+    const navItens = useRef(null);
+    //Função de colapse
+    const toggleColapse = () =>{
+        navItens.current.classList.toggle(styles["active"]);
+    }
+
     return ( 
-        <nav id="NavBar" className={classes}>
+        <nav id="NavBar" ref={navBar} className={classes}>
             
             <Logo src={logoSrc} alt={logoAlt} href="/" objectPosition="left center" height="100%" width="150px"/>
             
@@ -32,7 +41,7 @@ export default function LogoNavBar({logoSrc, logoAlt, backgroundColor, textColor
                 setIsAffix(!isAffix);
             }}>On</button>
 
-            <div id="nav" className={styles.nav_field}>
+            <div ref={navItens} className={styles.nav_field}>
                 <ButtonLink 
                     href={`https://wa.me/+55${whatsapp}`}
                     target="_blank"
@@ -53,7 +62,7 @@ export default function LogoNavBar({logoSrc, logoAlt, backgroundColor, textColor
                 </ButtonLink>
             </div>
 
-            <button className={styles.colapse} onClick={()=>{//Implementação gambiarra de um button pra colapse
+            {/*<button className={styles.colapse} onClick={()=>{//Implementação gambiarra de um button pra colapse
                 const nav = document.getElementById("nav");
                 if(!nav.classList.contains(styles.active)){
                     nav.classList.add(styles.active);
@@ -61,7 +70,12 @@ export default function LogoNavBar({logoSrc, logoAlt, backgroundColor, textColor
                 else{
                     nav.classList.remove(styles.active);
                 }
-            }}>[?]</button>
+            }}>[?]</button>*/}
+            <AnimatedHamburgerIcon 
+                background={isAffix ? textColor : backgroundColor}
+                className={styles.colapse}
+                onclick={toggleColapse}
+            />
         </nav>
      );
 }

@@ -40,7 +40,7 @@ export default function Home() {
         Garanta as melhores condições e coberturas par seu Carro. Cobertura completa que cabe no seu bolso, simule agora.
       </SideCTACard>
       */}
-      <AnimatedHamburgerIcon background="red"/>
+      <LogoNavBar backgroundColor="red" logoSrc="/mais-pet-logo-png.png" whatsapp="18996080815" telefone="1832734074" textColor="light"/>
     </div>
   )
 }
