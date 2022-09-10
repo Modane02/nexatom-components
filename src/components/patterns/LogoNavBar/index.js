@@ -62,15 +62,6 @@ export default function LogoNavBar({logoSrc, logoAlt, backgroundColor, textColor
                 </ButtonLink>
             </div>
 
-            {/*<button className={styles.colapse} onClick={()=>{//Implementação gambiarra de um button pra colapse
-                const nav = document.getElementById("nav");
-                if(!nav.classList.contains(styles.active)){
-                    nav.classList.add(styles.active);
-                }
-                else{
-                    nav.classList.remove(styles.active);
-                }
-            }}>[?]</button>*/}
             <AnimatedHamburgerIcon 
                 background={isAffix ? textColor : backgroundColor}
                 className={styles.colapse}
