@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import AnimatedHamburgerIcon from '../../cores/AnimatedHamburgerIcon';
 import Logo from '../../cores/Logo';
 import ButtonLink from '../../elements/ButtonLink'; //TOFIX
@@ -7,39 +7,38 @@ import styles from './LogoNavBar.styles.module.scss';
 
 export default function LogoNavBar({logoSrc, logoAlt, backgroundColor, textColor, whatsapp, telefone}) {
 
-    //#region classPicker
-    var classes = `${styles.nav} `;
-    styles["bg_" + backgroundColor] ? classes += `${styles["bg"]} ${styles["bg_" + backgroundColor]} ` : [];
-    classes = classes.trim();
+    //#region Affix Function
+    const [isAffix, setIsAffix] = useState(false);
+    const navBar = useRef(null);
+    const handleScroll = () => {
+        setIsAffix(window.scrollY > 100);
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     //#endregion
 
-    
-    //Seta o estado de affix da nav
-    const [isAffix, setIsAffix] = useState(false);
-
-    //Seta constantes de referência DOM
-    const navBar = useRef(null);
+    //#region Collapse Function
     const navItens = useRef(null);
-    //Função de colapse
     const toggleColapse = () =>{
         navItens.current.classList.toggle(styles["active"]);
     }
+    //#endregion
+
+    //#region classPicker
+    var classes = `${styles.nav} `;
+    styles["bg_" + backgroundColor] ? classes += `${styles["bg"]} ${styles["bg_" + backgroundColor]} ` : [];
+    isAffix ? classes += `${styles["affix"]} ` : [];
+    classes = classes.trim();
+    //#endregion
 
     return ( 
         <nav id="NavBar" ref={navBar} className={classes}>
             
             <Logo src={logoSrc} alt={logoAlt} href="/" objectPosition="left center" height="100%" width="150px"/>
-            
-            <button onClick={()=>{//Implementação gambiarra de um button pra criar o efeito affix
-                const nav = document.getElementById("NavBar");
-                if(!nav.classList.contains(styles.affix)){
-                    nav.classList.add(styles.affix);
-                }
-                else{
-                    nav.classList.remove(styles.affix);
-                }
-                setIsAffix(!isAffix);
-            }}>On</button>
 
             <div ref={navItens} className={styles.nav_field}>
                 <ButtonLink 

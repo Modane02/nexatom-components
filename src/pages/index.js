@@ -24,7 +24,6 @@ export default function Home() {
         <CallToActionText title="Seguro para Carro" titleSize="h3" textColor="dark" buttonColor="primary" buttonText="Saiba Mais">Garanta as melhores condições e coberturas par seu Carro. Cobertura completa que cabe no seu bolso, simule agora.</CallToActionText>
       </div>
       */}
-      {/*
       <LogoNavBar backgroundColor="red" logoSrc="/mais-pet-logo-png.png" whatsapp="18996080815" telefone="1832734074" textColor="light"/>
 
       <SideCTACard orientation="left" title="Seguro para Carro" textColor="dark" buttonColor="primary" buttonText="Saiba Mais" image="/mais-pet-logo-png.png">
@@ -39,8 +38,7 @@ export default function Home() {
       <SideCTACard orientation="right" title="Seguro para Carro" textColor="dark" buttonColor="primary" buttonText="Saiba Mais" image="/mais-pet-logo-png.png">
         Garanta as melhores condições e coberturas par seu Carro. Cobertura completa que cabe no seu bolso, simule agora.
       </SideCTACard>
-      */}
-      <LogoNavBar backgroundColor="red" logoSrc="/mais-pet-logo-png.png" whatsapp="18996080815" telefone="1832734074" textColor="light"/>
+      {/*<LogoNavBar backgroundColor="red" logoSrc="/mais-pet-logo-png.png" whatsapp="18996080815" telefone="1832734074" textColor="light"/>*/}
     </div>
   )
 }
