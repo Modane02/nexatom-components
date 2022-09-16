@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { useRef, useState } from "react";
 import AnimatedHamburgerIcon from "../components/cores/AnimatedHamburgerIcon";
+import InputField from "../components/cores/InputField";
 import LogoParceira from "../components/cores/LogoParceira";
 import Marker from "../components/cores/Marker";
 import Text from "../components/cores/Text";
@@ -11,6 +13,11 @@ import SideCTACard from "../components/patterns/SideCTACard";
 import SimpleCard from "../components/patterns/SimpleCard";
 
 export default function Home() {
+  
+  const [val, setVal] = useState(null);
+  const refForm = useRef(null);
+  const handleSubmitButton = () => {refForm.current.dispatchEvent(new Event("submit",{cancelable: true, bubbles: true}));}
+  const handleSubmitForm = (event)=>{event.preventDefault();alert("AEEEE"); console.log("Submitou!");console.log(val);}
   return (
     <div className="app">
       {/*
@@ -24,6 +31,7 @@ export default function Home() {
         <CallToActionText title="Seguro para Carro" titleSize="h3" textColor="dark" buttonColor="primary" buttonText="Saiba Mais">Garanta as melhores condições e coberturas par seu Carro. Cobertura completa que cabe no seu bolso, simule agora.</CallToActionText>
       </div>
       */}
+      {/*
       <LogoNavBar backgroundColor="red" logoSrc="/mais-pet-logo-png.png" whatsapp="18996080815" telefone="1832734074" textColor="light"/>
 
       <SideCTACard orientation="left" title="Seguro para Carro" textColor="dark" buttonColor="primary" buttonText="Saiba Mais" image="/mais-pet-logo-png.png">
@@ -38,7 +46,20 @@ export default function Home() {
       <SideCTACard orientation="right" title="Seguro para Carro" textColor="dark" buttonColor="primary" buttonText="Saiba Mais" image="/mais-pet-logo-png.png">
         Garanta as melhores condições e coberturas par seu Carro. Cobertura completa que cabe no seu bolso, simule agora.
       </SideCTACard>
+      */}
       {/*<LogoNavBar backgroundColor="red" logoSrc="/mais-pet-logo-png.png" whatsapp="18996080815" telefone="1832734074" textColor="light"/>*/}
+      <form ref={refForm} id="testForm" onSubmit={handleSubmitForm}>
+        <InputField name="test" dadValue={setVal}></InputField>
+
+        <ButtonLink
+          type="submit" 
+          background="success" 
+          color="light"
+          onclick={handleSubmitButton}
+        >
+          Submitar!!!
+        </ButtonLink> 
+      </form>
     </div>
   )
 }
