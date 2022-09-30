@@ -8,6 +8,7 @@ import Text from "../components/cores/Text";
 import Title from "../components/cores/Title";
 import ButtonLink from "../components/elements/ButtonLink";
 import CallToActionText from "../components/elements/CallToActionText";
+import NameInput from "../components/elements/NameInput";
 import LogoNavBar from "../components/patterns/LogoNavBar";
 import SideCTACard from "../components/patterns/SideCTACard";
 import SimpleCard from "../components/patterns/SimpleCard";
@@ -15,6 +16,8 @@ import SimpleCard from "../components/patterns/SimpleCard";
 export default function Home() {
   
   const [val, setVal] = useState(null);
+  var valorTeste = null;
+  const fun = (value) => {valorTeste = value;}
   const refForm = useRef(null);
   const handleSubmitButton = () => {refForm.current.dispatchEvent(new Event("submit",{cancelable: true, bubbles: true}));}
   const handleSubmitForm = (event)=>{event.preventDefault();alert("AEEEE"); console.log("Submitou!");console.log(val);}
@@ -48,8 +51,8 @@ export default function Home() {
       </SideCTACard>
       */}
       {/*<LogoNavBar backgroundColor="red" logoSrc="/mais-pet-logo-png.png" whatsapp="18996080815" telefone="1832734074" textColor="light"/>*/}
-      <form ref={refForm} id="testForm" onSubmit={handleSubmitForm}>
-        <InputField name="test" dadValue={setVal}></InputField>
+      <form ref={refForm} id="testForm" onSubmit={(event)=>{alert(valorTeste);console.log(val);event.preventDefault;}}>
+        <NameInput setDad={setVal}/>
 
         <ButtonLink
           type="submit" 
@@ -60,6 +63,14 @@ export default function Home() {
           Submitar!!!
         </ButtonLink> 
       </form>
+      {/**
+       * Orientação Formulário:
+       * 3 classes
+       * Formulário com botão onde pega as classes input e reside o useState
+       * Input com rest onde vai ter regra de negócio, placeholder e fazer as budega de mostrar
+       * Input com os estilos, onde terá toda a regra de modificação
+       * Modificar origem da pasta de `InputField`, colocando como molecule, não atom.
+       */}
     </div>
   )
 }
